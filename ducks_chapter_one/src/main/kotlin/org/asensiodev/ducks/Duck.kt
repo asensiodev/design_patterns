@@ -4,9 +4,13 @@ import org.asensiodev.org.asensiodev.behaviour_interfaces.FlyBehaviour
 import org.asensiodev.org.asensiodev.behaviour_interfaces.QuackBehaviour
 
 abstract class Duck(
-    val flyBehaviour: FlyBehaviour? = null,
-    val quackBehaviour: QuackBehaviour? = null
+    var flyBehaviour: FlyBehaviour? = null,
+    var quackBehaviour: QuackBehaviour? = null
 ) {
+
+    fun swim() {
+        println("All ducks float, even decoys!")
+    }
 
     abstract fun display()
 
@@ -18,8 +22,12 @@ abstract class Duck(
         quackBehaviour?.quack()
     }
 
-    fun swim() {
-        println("All ducks float, even decoys!")
+    fun updateFlyBehaviour(fb: FlyBehaviour) {
+        flyBehaviour = fb
+    }
+
+    fun updateQuackBehaviour(qb: QuackBehaviour) {
+        quackBehaviour = qb
     }
 
 }
