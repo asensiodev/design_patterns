@@ -6,6 +6,6 @@ class DuckCall(
     var quackBehaviour: QuackBehaviour
 ) {
     fun makeQuackSound() {
-        quackBehaviour.
+        quackBehaviour.quack()
     }
 }
